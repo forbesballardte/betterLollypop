@@ -11,10 +11,6 @@ import java.awt.Color;
  */
 public class evenBetterLollipop
 {
-    public static final double X = 300.0;   //horizontal center of Lollipop
-    public static final double Y = 180.0;   //vertical center of lollipop
-    public static final double SIZE = 80.0;     //diameter of Lollipop
-    public static final double STICK = 200.0;   // length of lollipop stick
     
     /**
      * Constructor for objects of class evenBetterLollipop
@@ -25,20 +21,26 @@ public class evenBetterLollipop
         UI.addButton("Quit", UI::quit);
     }
     
-    private void drawLollipop() {
-        double left = X - SIZE/2.0;
-        double right = Y - SIZE/2.0;
-        double bottom = Y + STICK;
+    public void doDrawLollipop() {
+        double size = UI.askDouble("Diameter: ");
+        double stickHeight = UI.askDouble("Stick Height: ");
+        drawLollipop(300.0, 180.0, size, stickHeight);
+    }
+    
+    private void drawLollipop(double x, double y, double size, double stick) {
+        double left = x - size/2.0;
+        double right = y - size/2.0;
+        double bottom = y + stick;
         
-        UI.setLineWidth(SIZE/8.0);
-        UI.drawLine(X, Y, X, bottom);
+        UI.setLineWidth(size/8.0);
+        UI.drawLine(x, y, x, bottom);
         UI.setLineWidth(1);
         UI.setColor(Color.red);
-        UI.fillOval(left, right, SIZE, SIZE);
+        UI.fillOval(left, right, size, size);
     }
     
     public static void main(String[] args) {
         evenBetterLollipop obj = new evenBetterLollipop();
-        obj.drawLollipop();
+        obj.doDrawLollipop();
     }
 }
