@@ -4,12 +4,12 @@ import java.io.*;
 import java.awt.Color;
 
 /**
- * Write a description of class betterLollipop here.
+ * Write a description of class evenBetterLollipop here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class betterLollipop
+public class evenBetterLollipop
 {
     public static final double X = 300.0;   //horizontal center of Lollipop
     public static final double Y = 180.0;   //vertical center of lollipop
@@ -17,9 +17,9 @@ public class betterLollipop
     public static final double STICK = 200.0;   // length of lollipop stick
     
     /**
-     * Constructor for objects of class betterLollipop
+     * Constructor for objects of class evenBetterLollipop
      */
-    public betterLollipop()
+    public evenBetterLollipop()
     {
         UI.initialise();
         UI.addButton("Quit", UI::quit);
@@ -38,7 +38,7 @@ public class betterLollipop
     }
     
     public static void main(String[] args) {
-        betterLollipop obj = new betterLollipop();
+        evenBetterLollipop obj = new evenBetterLollipop();
         obj.drawLollipop();
     }
 }
